@@ -10,7 +10,7 @@ let counter = setInterval( () => {
         alert('Вы победили в конкурсе!'); 
         clearInterval(counter);            
     }         
-}, 1);
+}, 1000);
 
 
 
@@ -47,4 +47,4 @@ let counterTimer = setInterval( () => {
     if (startTimer < 10 & startTimer > 0) {
         sec.textContent = '0' + startTimer;    
     }      
-}, 10);
+}, 1000);
