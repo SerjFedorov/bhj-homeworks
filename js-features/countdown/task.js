@@ -14,37 +14,36 @@ let counter = setInterval( () => {
 
 
 
-
-
-
 const sec = document.getElementById('sec');
 const min = document.getElementById('min');
 const hours = document.getElementById('hours');
 
-
 let counterTimer = setInterval( () => {
     let startTimer = sec.textContent;
-    --startTimer;  
+    startTimer--;  
     sec.textContent = startTimer;
     if (hours.textContent == 0 && min.textContent == 0 && sec.textContent == 0) {
         alert('Время вышло!'); 
         clearInterval(counterTimer);
-    }        
-    if (startTimer == 0 ){
+        counterTimer = null;        
+    }      
+    if (startTimer === 0 ){
         sec.textContent = 59;
         min.textContent = min.textContent - 1; 
-        if (min.textContent == 0) {
+        if (min.textContent === 0) {
             min.textContent = 59;
             hours.textContent = hours.textContent -1;
             if (hours.textContent < 10 & hours.textContent >= 0) {
                 hours.textContent = '0' + hours.textContent;    
                 }                  
-            }
+            }           
         if (min.textContent < 10 & min.textContent > 0) {
             min.textContent = '0' + min.textContent;    
         }         
     }           
     if (startTimer < 10 & startTimer > 0) {
         sec.textContent = '0' + startTimer;    
-    }      
+    }    
 }, 1000);
+
+
