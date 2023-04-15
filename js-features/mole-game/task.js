@@ -17,12 +17,16 @@ hole.onclick = () => {
         win.textContent = clickWin;
         if (clickWin === 3) {
             alert('WIN')
+            win.textContent = 0;
+            lose.textContent = 0;
         }
     } else {
         clickLose++;
         lose.textContent = clickLose;
         if (clickLose === 10) {
-            alert('lose')           
+            alert('lose')
+            win.textContent = 0;
+            lose.textContent = 0;           
         }
     }
 }}
