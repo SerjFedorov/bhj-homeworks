@@ -1,9 +1,11 @@
 "use strict"
-const slide = document.querySelectorAll('.slider__item'); //находим все слайды slider_item
+const slide =[... document.querySelectorAll('.slider__item')]; //находим все слайды slider_item
 const totalSlide = slide.length;//устанавливаем максимальное значение слайдов
 
-let currectSlide = 0;//устанавливаем текущий слайд
-slide[currectSlide].classList.add('slider__item_active');//активируем текущий слайд
+// let currectSlide = 0;//устанавливаем текущий слайд
+// slide[currectSlide].classList.add('slider__item_active');//активируем текущий слайд(глобальная переменная)
+
+let currectSlide = slide.findIndex(s => s.classList.contains('slider__item_active'));//утанавливаем и находим текущий слайд(локальная переменная)
 
 const arrowPrev = document.querySelector('.slider__arrow_prev');//находим стрелочку назад
 const arrowNext = document.querySelector('.slider__arrow_next');//находим стрелочку вперед
