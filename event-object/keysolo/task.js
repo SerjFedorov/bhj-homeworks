@@ -17,13 +17,24 @@ class Game {
   }
 
   registerEvents() {
+
+    document.addEventListener('keydown', (e) =>  {//обработчик события на нажатую кнопку >>Е
+    const currentPress = e.key.toLowerCase();// получаем текущйи нажатый элемент строчный
+    const currentSymbol = this.currentSymbol.textContent.toLowerCase(); // ПОЛУЧАЕМ ЭЛЕМЕНТ ТЕКУЩЕГО СИМВОЛА  строчный
+
+    if (currentPress === currentSymbol) {
+      this.success();
+    } else {
+      this.fail();
+    }
+  })
     /*
       TODO:
       Написать обработчик события, который откликается
       на каждый введённый символ.
       В случае правильного ввода слова вызываем this.success()
       При неправильном вводе символа - this.fail();
-      DOM-элемент текущего символа находится в свойстве this.currentSymbol.
+      DOM-элемент текущего символа находится в свойстве this.currentSymbol. 
      */
   }
 
