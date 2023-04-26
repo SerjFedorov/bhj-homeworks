@@ -1,20 +1,20 @@
-
 const tabs = [...document.querySelectorAll('.tab')];// все вкладки
 const tabContents = [... document.querySelectorAll('.tab__content')];//содержимое вкладок
 
-tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
-    const tabIndex = tabs.indexOf(tab); //найдем индекс вкладки
+function onClick (el) {
+    el.preventDefault();
+    tabs.forEach((el) =>
+    el.classList.remove('tab_active')); // удалим все активные классы
 
-    tab.classList.toggle('tab_active');  //удаляем\добавляем класс активной вкладки
+const target = el.target; // положение клика
+target.classList.add('tab_active'); //добавляем класс по клику
 
-    // tabs.forEach(tab => {
-    //     tab.classList.remove('tab_active'); // 
-    // });
-    // tab.classList.add('tab_active');
-    tabContents.forEach(content => { // перебираем все табконтент и удаляем активную вкладку
-        content.classList.remove('tab__content_active');
-    });
-    tabContents[tabIndex].classList.add('tab__content_active');// добавляем текущей вкладке [tabIndex] активность
-    });
+tabContents.forEach((content) => { //перебираем все содержание вкладок и удаляем классы
+content.classList.remove('tab__content_active');        
 });
+const index = tabs.indexOf(target); //найдем индекс
+tabContents[index].classList.add('tab__content_active'); //добавим класс по индексу IND = tabContents[index];
+}                                                        //IND.classList.add('tab__content_active')
+
+tabs.forEach((elem) => {
+elem.addEventListener('click', onClick)}) ////обработчик события по клику для всего массива 
