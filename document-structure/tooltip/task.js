@@ -31,6 +31,7 @@ function show (event) {
 }
 
 function hide (event) {//удаление блока подсказки
+    event.preventDefault();
     const tooltipElement = event.target;
     const tooltipDiv = document.querySelector('.tooltip');
     tooltipDiv.remove();

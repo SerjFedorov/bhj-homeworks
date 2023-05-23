@@ -38,23 +38,3 @@ del.addEventListener('click', (event) => {
         }
     }   
 )
-
-
-// task.addEventListener('keydown', (event) => { //вызов функции по енттер хотя поле по умалчению отправляет
-//     if (event.key === 'Enter') {
-//             event.preventDefault();
-//         enterTask();
-//         } 
-//     }
-// )
-
-
-// function delTask(event) {
-//     let target = event.target;
-//     if (target.classList.contains('task__remove')) {
-//         target.closest('.task').remove();
-    
-// }}
-
-// document.addEventListener('click', delTask);
-
