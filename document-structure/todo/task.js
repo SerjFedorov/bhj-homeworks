@@ -1,3 +1,5 @@
+const task = document.querySelector('.tasks__input');
+
 function enterTask () {
     const text = task.value.trim();//убираем пробелы
         if (text === '') { // если пустое сообщение алерт
@@ -14,16 +16,6 @@ function enterTask () {
     taskList.insertAdjacentHTML('afterbegin', taskMess);// добавляем перед концом .tasks__list
     task.value = '';//сбрасыеваем значение окна после ввода
 }
-
-const task = document.querySelector('.tasks__input');
-
-task.addEventListener('keydown', (event) => { //вызов функции по енттер хотя поле по умалчению отправляет
-    if (event.key === 'Enter') {
-            event.preventDefault();
-        enterTask();
-        } 
-    }
-)
 
 const btn = document.querySelector('.tasks__add');
 
@@ -46,6 +38,16 @@ del.addEventListener('click', (event) => {
         }
     }   
 )
+
+
+// task.addEventListener('keydown', (event) => { //вызов функции по енттер хотя поле по умалчению отправляет
+//     if (event.key === 'Enter') {
+//             event.preventDefault();
+//         enterTask();
+//         } 
+//     }
+// )
+
 
 // function delTask(event) {
 //     let target = event.target;
