@@ -39,9 +39,6 @@ productInc.forEach(event => {
     event.addEventListener('click', productPlus);
     }
 );
-
-
-
 const productAdd = document.querySelectorAll('.product__add');
 
 function addProduct (event) {
