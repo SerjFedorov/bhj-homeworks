@@ -1,6 +1,6 @@
-let xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 
-xhr.addEventListener('readystatechange', () => {
+xhr.addEventListener('load', () => {
     if (xhr.readyState === xhr.DONE && xhr.status === 200) {
         const loader = document.querySelector('.loader_active');
         loader.classList.remove('loader_active');
