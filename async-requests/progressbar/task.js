@@ -6,9 +6,9 @@ document.querySelector('#form').addEventListener('submit', (e) => {
 
     xhr.upload.addEventListener('progress', (event) => {
         if (event.lengthComputable) {
-            const percentComplete = (event.loaded / event.total) * 100;
-            progress.value = percentComplete;
-        }
+            const percentComplete = (event.loaded / event.total);
+            progress.value = percentComplete;            
+        }        
     }
 )
 
